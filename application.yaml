@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: http-echo
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Umershamshad53/k3s-test.git
+    targetRevision: HEAD
+    path: .               # Use "." if the YAMLs are in the repo root
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
