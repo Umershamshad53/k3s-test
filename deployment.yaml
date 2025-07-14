@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: http-echo
-          image: hashicorp/http-echo
+          image: umershamshad/k3s-test:${tag}${BUILD_NUMBER}
           args:
             - "-text=Hello from K3s!"
           ports:
