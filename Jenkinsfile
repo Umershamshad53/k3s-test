@@ -22,6 +22,7 @@ pipeline {
             echo ${DOCKER_CREDENTIALS_PSW} | docker login -u ${DOCKER_CREDENTIALS_USR} --password-stdin
             docker push umershamshad/k3s-test:${tag}latest
             docker push umershamshad/k3s-test:${tag}${BUILD_NUMBER}
+            sed -i 's|umershamshad/k3s-test:.*|umershamshad/k3s-test:${tag}${BUILD_NUMBER}|' deployment.yaml
           """
         }
       }
