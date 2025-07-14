@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: http-echo
-          image: umershamshad/k3s-test:4
+          image: umershamshad/k3s-test:8
           args:
             - "-text=Hello from K3s!"
           ports:
