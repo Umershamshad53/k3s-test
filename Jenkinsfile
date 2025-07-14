@@ -25,7 +25,7 @@ pipeline {
             sed -i 's|umershamshad/k3s-test:.*|umershamshad/k3s-test:${tag}${BUILD_NUMBER}|' deployment.yaml
             git add deployment.yaml
             git commit -m "Update image tag to ${tag}${BUILD_NUMBER}"
-            git push origin ${BRANCH_NAME}
+            git push 
           """
         }
       }
